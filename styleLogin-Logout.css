@@ -1,0 +1,189 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+section .imagenBx{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+
+section .imagenBx::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(225deg, #7700ff, #f700ff);
+    z-index: 1;
+    mix-blend-mode: screen;
+}
+
+section .imagenBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .div-contenido{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center ;
+    align-items: center;
+}
+
+section .div-contenido .formBx{
+    width: 50%;
+}
+
+section .div-contenido .formBx h2{
+    color: #947CAC;
+    font-weight: 600;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #A580A6;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+section .div-contenido .formBx .inputBx{
+    margin-bottom: 20px;
+}
+
+section .div-contenido .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+    color: #4F3466;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+section .div-contenido .formBx .inputBx input{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #b57aec;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #b57aec;
+    background: transparent;
+    border-radius: 30px;
+}
+
+section .div-contenido .formBx .inputBx input[type="submit"]{
+    background: #4F3466;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+section .div-contenido .formBx .inputBx input[type="submit"]:hover{
+    background: #3d1263;
+}
+
+section .div-contenido .formBx .remember{
+    margin-bottom: 10px;
+    color: #b57aec;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+
+section .div-contenido .formBx .inputBx p{
+    color: #b57aec;
+}
+
+section .div-contenido .formBx .inputBx p a{
+    color: #4F3466;
+}
+
+section .div-contenido .formBx h3{
+    color: #b57aec;
+    text-align: center;
+    margin: 80px 0 10px;
+    font-weight: 500;
+}
+
+section .div-contenido .formBx .sci{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .div-contenido .formBx .sci li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #b57aec;
+    border-radius: 50%;
+    margin: 0 7px;
+    cursor: pointer;
+}
+
+section .div-contenido .formBx .sci li:hover{
+    background: #4F3466;
+}
+
+section .div-contenido .formBx .sci li img{
+    width: 50px;
+    transform: scale(0.5);
+    filter: invert(1);
+}
+
+
+@media (max-width: 768px){
+    section .imagenBx{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;  
+    }
+
+    section .div-contenido{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    section .div-contenido .formBx{
+        width: 100%;
+        padding: 40px;
+        background: rgba(255, 255, 255, 0.712);
+        margin: 50px;
+    }
+
+    section .div-contenido .formBx h3{
+        color: #b57aec;
+        text-align: center;
+        margin: 30px 0 10px;
+        font-weight: 500;
+    }
+  
+}

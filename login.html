@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicas sin filtro - Iniciar Sesión</title>
+    <link rel="icon" href="imagenes/pixelcut-export-removebg-preview.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styleLogin-Logout.css">
+    
+</head>
+<body>
+    <section>
+        <div class="imagenBx">
+            <img src="imagenes/aesthetic-nature-lranj4zb232fot70.jpg" alt="">
+        </div>
+        <div class="div-contenido">
+            <div class="formBx">
+                <h2>Iniciar sesión</h2>
+                <form id="signIn">
+                    <div class="inputBx">
+                        <span>Correo Electronico</span>
+                        <input type="email" id="correoSignIn">
+                    </div>
+                    <div class="inputBx">
+                        <span>Contraseña</span>
+                        <input type="password" id="contraseñaSignIn">
+                    </div>
+                    <div class="remember">
+                        <label><input type="checkbox">Remember me</label>
+                    </div>
+                    <div class="inputBx">
+                        <input type="submit" value="Iniciar sesión" id="iniciarSesion">
+                    </div>
+                    <div class="inputBx">
+                        <p>No tienes cuenta? <a href="registro.html">Registrate!</a></p>
+                    </div>
+                </form>
+                <h3>Iniciar sesión con:</h3>
+                <ul class="sci">
+                    <li><img src="imagenes/google-Icon.jpg" alt="" id="googleBoton"></li>
+                    <li><img src="imagenes/github-Icon.png" alt="" id="githubBoton"></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <script type="module" src="firebase.js"></script>
+    <script type="module" src="login.js"></script>
+</body>
+</html>
