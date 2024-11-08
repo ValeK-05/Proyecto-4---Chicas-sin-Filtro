@@ -75,6 +75,20 @@ section .div-contenido .formBx .inputBx span{
     letter-spacing: 1px;
 }
 
+section .div-contenido .formBx .inputBx textarea{
+    width: 100%;
+    padding: 10px 20px;
+    outline: none;
+    font-weight: 400;
+    border: 1px solid #b57aec;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #b57aec;
+    background: transparent;
+    border-radius: 30px;
+    resize: none;
+}
+
 section .div-contenido .formBx .inputBx input{
     width: 100%;
     padding: 10px 20px;

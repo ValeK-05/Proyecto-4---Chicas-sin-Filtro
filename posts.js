@@ -28,6 +28,8 @@ import {
  let userEmail = "";
  let usuarioId = "";
 
+ 
+
  onAuthStateChanged(auth, async (user) => {
 
     const docUser = await getDoc(doc(db, "usuarios", user.uid));
@@ -61,7 +63,7 @@ import {
             btnsDelete.forEach((btn)=>{
                 btn.addEventListener("click", async (e) => {
                     try{
-                        await deletePost(e.target.dataset.id)
+                        await deletePost(e.currentTarget.dataset.id)
                     }catch(error){
                         alert(error.code)
                     }
@@ -71,11 +73,12 @@ import {
 
             //----------------------------Editar Post------------------------------
             const btnsEdit = document.querySelectorAll(".btn-edit");
-
+            
             btnsEdit.forEach((btn) => {
                 btn.addEventListener("click", async (e) => {
-                    id = e.target.dataset.id;
-                    const doc = await getPost(id);
+                    id= e.currentTarget.dataset.id;
+                    console.log("ID del post:", id);
+                    const doc = await getPost(id)
                     const post = doc.data();
 
                     const titulo = post.titulo;
@@ -125,6 +128,72 @@ import {
     }
  })
 
+ //---------------------Foto de perfil de usuario---------------------
+ const mostrarFotoPerfil = async () => {
+    const user = auth.currentUser;
+    if (!user) return;
+
+    try {
+        // Obtener los datos del usuario 
+        const userRef = doc(db, "usuarios", user.uid);
+        const docUser = await getDoc(userRef);
+
+        if (docUser.exists()) {
+            const usuarioData = docUser.data();
+            const fotoUrl = usuarioData.avatarURL;
+
+            // Si el usuario tiene una foto de perfil mostrarla en el navbar
+            if (fotoUrl) {
+                const fotoUsuario = document.getElementById("fotoUsuario");
+                fotoUsuario.innerHTML = `<img src="${fotoUrl}" alt="Foto de Perfil" class="fotoUsuario">`;
+            } else {
+                // Si no tiene foto mostrar foto por defecto
+                const fotoUsuario = document.getElementById("fotoUsuario");
+                fotoUsuario.innerHTML = `<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Foto de Perfil" class="fotoUsuario">`;
+            }
+        }
+
+    } catch (error) {
+        console.error("Error al obtener la foto de perfil:", error);
+    }
+};
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        mostrarFotoPerfil();
+    }
+
+
+});
+
+//-----------------------Mostrar carta de usuario-----------------------
+document.getElementById("fotoUsuario").addEventListener("click", async(e) => {
+    e.preventDefault();
+ 
+    const cartaUsuario= document.getElementById("cartaUsuario");
+    
+
+    if (!cartaUsuario.classList.contains("d-none")) {
+        const user = auth.currentUser;
+
+        if (user) {
+            try {
+ 
+                const docUser = await getDoc(doc(db, "usuarios", user.uid));
+                const usuarioData = docUser.data();
+
+
+
+                document.getElementById("emailUsuario").textContent = user.email;
+                document.getElementById("avatarUsuario").src = usuarioData.avatarURL;
+                document.getElementById("descripcionUsuario").textContent = user.descripcionUsuario;
+                document.getElementById("paisUsuario").textContent = user.pais;
+            } catch (error) {
+                console.error("Error al obtener los datos del usuario:", error);
+            }
+        }
+    }
+});
 
  //----------------------Pintar Post en el html--------------------
 
@@ -144,16 +213,18 @@ import {
             
 
             const li = `
-                <li class="list-group-item list-group-item-action list-group-item-dark">
-                <h5>${post.userEmail} posteó: </h5>
-                <p>${formatoFechaHora(post.fecha.toDate())}</p>
-                <h5>${post.titulo}</h5>
-                <p>${post.contenido}</p>
+                <li class="list-group-item post">
+                <h5 class="correo" style="background-color:#ded1a9c9">${post.userEmail} posteó: </h5>
+                <h5 class="titulo">${post.titulo}</h5>
+                <p class="contenidoPost">${post.contenido}</p>
                 <img src="${post.imagenURL}" style="width:100%" />
-                <button class="btn-delete" data-id="${doc.id}">Borrar</button>
-                <button class="btn-edit" data-id="${doc.id}">Editar</button>
+                <p class="fecha">${formatoFechaHora(post.fecha.toDate())}</p>
+                <div class="botonesPost" style="background-color:#ded1a9c9">
                 <button class="btn-like" data-id="${doc.id}">${iconoLike}</button>
+                <button class="btn-delete" data-id="${doc.id}"><i class="bi bi-trash3-fill"></i></button>
+                <button class="btn-edit" data-id="${doc.id}"><i class="bi bi-pencil-fill"></i></button>
                 <p>A ${post.personasLiked.length} les gusta esto</p>
+                </div>
                 </li>
             `
             html += li
@@ -180,16 +251,17 @@ import {
             }
 
             const li = `
-                <li class="list-group-item list-group-item-action list-group-item-dark">
-                <h5>${post.userEmail} posteó: </h5>
-                <p>${formatoFechaHora(post.fecha.toDate())}</p>
-                <h5>${post.titulo}</h5>
-                <p>${post.contenido}</p>
-                <img src="${post.imagenURL}" style="width:100%"/>
-                <button class="btn-delete" data-id="${doc.id}">Borrar</button>
-                <button class="btn-edit" data-id="${doc.id}">Editar</button>
-                <button class="btn-like" data-id="${doc.id}>${iconoLike}</button>
-                <p>A ${post.personasLiked.length} les gusta esto</p>
+                <li class="list-group-item post">
+                <h5 class="correo" style="background-color:#ded1a9c9">${post.userEmail} posteó: </h5>
+                <h5 class="titulo">${post.titulo}</h5>
+                <p class="contenidoPost">${post.contenido}</p>
+                <img src="${post.imagenURL}" class="imagenPost" style="width:100%"/>
+                <p class="fecha">${formatoFechaHora(post.fecha.toDate())}</p>
+                <div class="botonesPost" style="background-color:#ded1a9c9">
+                <button class="btn-like botonLike" data-id="${doc.id}">${iconoLike}</button>
+                <button class="botonComent"><i class="bi bi-chat-fill"></i></button>
+                <p class="likes">A ${post.personasLiked.length} les gusta esto</p>
+                </div>
                 </li>
             `
             html += li
@@ -233,6 +305,7 @@ import {
 
  const deletePost = (id) => deleteDoc(doc(db, "posts", id))
  const getPost = (id) => getDoc(doc(db, "posts", id))
+ 
 
  //---------------------------Funcion actualizar Post--------------------------------
 
@@ -302,4 +375,6 @@ import {
     }
 });
  
+
+
  

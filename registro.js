@@ -26,7 +26,8 @@ document.getElementById("signUp").addEventListener("submit", async (e) => {
 
     const email = document.getElementById("email").value;
     const password = document.getElementById("contraseña").value;
-    const nombres = document.getElementById("signup-names").value;
+    const pais = document.getElementById("paisInput").value;
+    const descripcionUsuario = document.getElementById("descripcionUsuario").value;
 
     try{
         const credentials = await createUserWithEmailAndPassword(auth,email,password);
@@ -35,7 +36,8 @@ document.getElementById("signUp").addEventListener("submit", async (e) => {
         await setDoc(doc(db,"usuarios",user.uid),{
             email: email,
             password: password,
-            nombres: nombres,
+            pais: pais,
+            descripcionUsuario: descripcionUsuario,
             avatarURL: avatarURL
         });
         console.log("creado");

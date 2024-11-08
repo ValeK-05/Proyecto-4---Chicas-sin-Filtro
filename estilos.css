@@ -1,0 +1,152 @@
+body {
+    background-color: #C5BDAF;
+}
+
+.infoPag {
+    height: auto;
+    padding: 20px;
+    margin-bottom: 100px;
+    max-height: 1500px;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.infoPag img {
+    height: 300px;
+    width: auto;
+    max-width: 100%; 
+    border: 10px solid #4F3466;
+    margin-left: 38%; 
+    margin-top: 30px;
+    margin-bottom: 30px;
+    position: relative !important;
+    top: -30px !important;
+    box-shadow: 0 10px 20px rgba(43, 41, 41, 0.952);
+}
+
+.infoPag h1 {
+    font-size: 5rem;
+    color: #A580A6;
+    text-align: center;
+    text-shadow: 2px 2px 2px #4F3466, -2px -2px 0px #4F3466;
+}
+
+.infoPag h2 {
+    font-size: 3rem;
+    color: #A580A6;
+    text-align: center;
+    text-shadow: 2px 2px 0px #4F3466, -2px -2px 0px #4F3466;
+    position: relative !important;
+    top: -49px !important;
+}
+
+.deQueTrata, .podras, .creadoPor {
+    border: 1px solid #4F3466;
+    background-color: #A580A6;
+    color: white;
+    padding: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 200px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.deQueTrata h3, .podras h3, .creadoPor h3 {
+    color: white;
+    text-shadow: 0 0 12px #8800ff;
+    text-align: center;
+}
+
+.deQueTrata p, .podras p, .creadoPor p {
+    width: 600px;
+    text-align: center !important;
+}
+
+.bienvenida{
+    font-size: 5rem;
+    margin-top: 20px;
+    padding-top: 20px;
+    color: #A580A6;
+    text-align: center;
+    text-shadow: 2px 2px 2px #4F3466, -2px -2px 0px #4F3466;
+}
+
+@media (max-width: 768px) {
+    .infoPag img {
+        width: 100%; 
+        height: auto;
+        margin-left: 0; 
+        margin-right: 0; 
+        margin-top: 20px;
+        margin-bottom: 20px;
+        top: 0 !important; 
+    }
+
+    .infoPag h1 {
+        font-size: 3rem; 
+    }
+
+    .infoPag h2 {
+        font-size: 2rem; 
+    }
+
+    .deQueTrata, .podras, .creadoPor {
+        width: 90%; 
+        margin-top: 20px; 
+        padding: 20px; 
+    }
+
+    .deQueTrata p, .podras p, .creadoPor p {
+        width: 100%; 
+    }
+
+    .podras {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .infoPag h1 {
+        font-size: 4rem; 
+    }
+
+    .infoPag h2 {
+        font-size: 2.5rem; 
+    }
+
+    .deQueTrata, .podras, .creadoPor {
+        width: 80%; 
+    }
+
+    .infoPag img {
+        width: 100%; 
+        max-width: 600px; 
+    }
+}
+
+@media (min-width: 1025px) {
+    .infoPag h1 {
+        font-size: 5rem; 
+    }
+
+    .infoPag h2 {
+        font-size: 3rem; 
+    }
+
+    .deQueTrata, .podras, .creadoPor {
+        width: 800px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .infoPag img {
+        max-width: 600px; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+

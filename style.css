@@ -8,9 +8,9 @@ body{
 
 .navbar{
     background-color: #4F3466 !important;
-    font-family: "Poiret One", sans-serif ;
-    font-weight: 400;
-    font-style: normal;
+    font-family: "Ribeye", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .navbar a{
@@ -54,7 +54,7 @@ html{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    z-index: 1;
+    z-index: 2;
     background: linear-gradient(#4F3466 25%,#7f54a5);
     transition: 1s;
 }
@@ -105,4 +105,221 @@ html{
 .letrasCentrales{
     margin-left: 50px;
 }
+
+/*Botones*/
+
+.btn-like{
+    color: red;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.btn-like:active{
+    transform: scale(3.5);
+    
+}
+
+.botonLike{
+    color: red;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.btn-delete{
+    color: gray;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+}
+
+
+
+.btn-edit{
+    color: gray;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.botonComent{
+    color: gray;
+    border:none;
+    background: transparent;
+    font-size: 20px;
+}
+
+.botonesPost{
+    border-top: 1px solid #4f346671;
+    border-bottom: 1px solid #4f346671;
+    margin: 0;
+}
+
+/*Posts*/
+.postDiv{
+    width: 1000px;
+    margin-top: 30px;
+    
+}
+.post{
+    background-color: white;
+    border-radius: 0 !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.605);
+}
+
+.correo{
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 5px;
+    border-bottom: 1px solid #4f346671;
+    font-family: "Ribeye", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #4F3466;
+}
+
+.fecha{
+    text-align: start;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.contenidoPost{
+    margin-left: 30px;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.botonCrearPost{
+    border: 1px solid #4f346671;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 20px;
+    background-color: #4F3466;
+    font-size: 23px;
+    font-family: "Ribeye", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #cba6d3;
+  transition: all 0.5s ease;
+}
+
+.botonCrearPost:hover{
+    background-color: #3f1366;
+    text-shadow: 0 0 12px white;
+}
+
+/*Carta de usuario*/
+
+#cartaUsuario{
+    font-family: "Ribeye", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #4F3466;
+}
+
+.modal-header{
+    background-color: #cba6d384;
+}
+
+.modal-footer{
+    background-color: #cba6d384 !important;
+}
+
+.encabezadoModal{
+    color: #4F3466;
+    font-family: "Ribeye", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.tituloModal{
+    font-family: "Ribeye", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: #4F3466 !important;
+}
+
+.contenidoModal{
+    font-family: "Ribeye", serif !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    color: #4F3466 !important;
+}
+
+.ponerContenido{
+    resize: none;
+    border: 1px solid #cba6d3 !important;
+    border-radius: 30px !important;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+.ponerTitulo{
+    border: 1px solid #cba6d3 !important;
+    border-radius: 30px !important;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.btn-editar{
+    border: 1px solid #cba6d3 !important;
+    position: absolute;
+    margin-left: 170px;
+    font-family: "Montserrat Alternates", sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    transition: all 0.5s ease;
+}
+
+.btn-editar:hover{
+    border: 1px solid #4F3466 !important;
+    color: #4F3466 !important;
+}
+
+.btn-actualizar{
+    border: 1px solid #cba6d3 !important;
+    font-family: "Montserrat Alternates", sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    transition: all 0.5s ease;
+}
+
+.btn-actualizar:hover{
+    border: 1px solid #4F3466 !important;
+    color: #4F3466 !important;
+}
+
+.btn-crear{
+    border: 1px solid #cba6d3 !important;
+    margin-left: 25px;
+    font-family: "Montserrat Alternates", sans-serif !important;
+    font-weight: 500 !important;
+    font-style: normal !important;
+    transition: all 0.5s ease;
+}
+
+.btn-crear:hover{
+    border: 1px solid #4F3466 !important;
+    color: #4F3466 !important;
+}
+
+.carousel{
+    position: relative !important;
+    z-index: 1;
+}
+
 
